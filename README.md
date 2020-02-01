@@ -1,2 +1,2 @@
-# apple_dashboard
+# Apple Dashboard
 Dashboard of Apple revenues.
