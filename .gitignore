@@ -1,3 +1,15 @@
+#VS Studio code
+settings.json
+**/.vscode
+.vscode/
+
+#ignore Config file
+config.js
+
+**/.DS_store
+**/.DS_Store
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
