@@ -22,7 +22,7 @@ var layout = {
 
 // Note that we omitted the layout object this time
 // This will use default parameters for the layout
-Plotly.newPlot("plot", data, layout);
+Plotly.newPlot("mac", data, layout);
 
 
 

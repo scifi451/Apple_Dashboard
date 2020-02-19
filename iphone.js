@@ -23,7 +23,7 @@ var layout = {
 
 // Note that we omitted the layout object this time
 // This will use default parameters for the layout
-Plotly.newPlot("plot2", data, layout);
+Plotly.newPlot("iphone", data, layout);
 
 
 

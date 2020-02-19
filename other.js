@@ -23,7 +23,7 @@ var layout = {
 
 // Note that we omitted the layout object this time
 // This will use default parameters for the layout
-Plotly.newPlot("plot4", data, layout);
+Plotly.newPlot("wearables", data, layout);
 
 
 
