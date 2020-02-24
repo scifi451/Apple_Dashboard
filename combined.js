@@ -58,16 +58,87 @@ var services = {
   }
 };
 // The data array consists of all traces
-var data = [other, ipad, mac, iphone, services];
+var data = [mac, iphone, ipad, other, services];
 
 // Apply the group barmode to the layout
 var layout = {
-title: "All Product Segments",
+title: "All Product Segments Fiscal Quarter",
 xaxis: { title: "Quarter" },
 yaxis: { title: "Revenue in Billons"}
 };
 
-
-// Note that we omitted the layout object this time
-// This will use default parameters for the layout
+// Setting up the plot for quarterly numbers
 Plotly.newPlot("combined", data, layout);
+
+// Create our first trace
+var ipad_yearly = {
+  name: 'iPad',
+  y: [30.94, 31.98, 30.29, 23.24, 20.63, 19.22, 18.59, 21.28],
+  x: ["2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019"],
+  type: "scatter",
+  line: {
+    color: 'rgb(248, 148, 39)',
+    width: 2
+  }
+};
+
+// Create our second trace
+var iphone_yearly = {
+  name: 'iPhone',
+  y: [78.7, 91.28, 101.99, 155.04, 136.71, 141.33, 165.8, 142.38],
+  x: ["2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019"],
+  type: "scatter",
+  line: {
+    color: 'rgb(253, 195, 51)',
+    width: 2
+  }
+};
+
+// Create our third trace
+var mac_yearly = {
+  name: 'Mac',
+  y: [23.22, 21.48, 24.09, 25.47, 22.84, 25.84, 25.35, 25.74],
+  x: ["2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019"],
+  type: "scatter",
+  line: {
+    color: 'rgb(115, 194, 92)',
+    width: 2
+  }
+};
+
+// Create our fourth trace
+var services_yearly = {
+  name: 'Services',
+  y: [12.89, 16.05, 18.07, 19.92, 24.36, 29.98, 38.47, 46.3],
+  x: ["2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019"],
+  type: "scatter",
+  line: {
+    color: 'rgb(168, 86, 169)',
+    width: 2
+  }
+};
+
+// Create our fifth trace
+var wearables_yearly = {
+  name: 'Wearables Etc',
+  y: [10.77, 10.11, 8.39, 10.07, 11.13, 12.86, 17.39, 24.49],
+  x: ["2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019"],
+  type: "scatter",
+  line: {
+    color: 'rgb(231, 82, 79)',
+    width: 2
+  }
+};
+
+// The data array consists of all traces
+var data = [mac_yearly, iphone_yearly, ipad_yearly, wearables_yearly, services_yearly];
+
+// Apply the group barmode to the layout
+var layout = {
+title: "All Product Segments Fiscal Year",
+xaxis: { title: "Year" },
+yaxis: { title: "Revenue in Billons"}
+};
+
+// Setting up the plot for quarterly numbers
+Plotly.newPlot("combined_year", data, layout);

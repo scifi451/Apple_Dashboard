@@ -9,20 +9,41 @@ var trace1 = {
     }
 };
 
-  // The data array consists of both traces
+  // The data array consists of the trace
 var data = [trace1];
 
 // Apply the group barmode to the layout
 var layout = {
-  title: "Mac Revenue by Quarter",
+  title: "Mac Revenue by Fiscal Quarter",
   xaxis: { title: "Quarter" },
   yaxis: { title: "Revenue in Billons"}
 };
 
-
-// Note that we omitted the layout object this time
-// This will use default parameters for the layout
+// Setting up the plot for quarterly numbers
 Plotly.newPlot("mac", data, layout);
 
+// Create our second trace
+var yearly = {
+  y: [23.22, 21.48, 24.09, 25.47, 22.84, 25.84, 25.35, 25.74],
+  x: ["2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019"],
+  type: "scatter",
+  line: {
+    color: 'rgb(248, 148, 39)',
+    width: 2
+  }
+};
+
+// The data array consists of both traces
+var data = [yearly];
+
+// Apply the group barmode to the layout
+var layout = {
+title: "Mac Revenue by Fiscal Year",
+xaxis: { title: "Year" },
+yaxis: { title: "Revenue in Billons"}
+};
+
+// Setting up the plot for yearly numbers
+Plotly.newPlot("mac-year", data, layout);
 
 
