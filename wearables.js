@@ -15,7 +15,7 @@ var data = [trace1];
 
 // Apply the group barmode to the layout
 var layout = {
-  title: "Wearables, home and accessories Revenue by Fiscal Quarter",
+  title: "Wearables, Home and Accessories Revenue by Fiscal Quarter",
   xaxis: { title: "Quarter" },
   yaxis: { title: "Revenue in Billons"}
 };
@@ -29,7 +29,7 @@ var yearly = {
   x: ["2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019"],
   type: "scatter",
   line: {
-    color: 'rgb(248, 148, 39)',
+    color: 'rgb(231, 82, 79)',
     width: 2
   }
 };
@@ -39,7 +39,7 @@ var data = [yearly];
 
 // Apply the group barmode to the layout
 var layout = {
-title: "Wearables, home and accessories Revenue by Fiscal Year",
+title: "Wearables, Home and Accessories Revenue by Fiscal Year",
 xaxis: { title: "Year" },
 yaxis: { title: "Revenue in Billons"}
 };
@@ -47,13 +47,57 @@ yaxis: { title: "Revenue in Billons"}
 // Setting up the plot for yearly numbers
 Plotly.newPlot("wearables-year", data, layout);
 
-var data = [
-  {
-    x: ['US Foods Holding', 'Apple Wearables', 'Starbucks'],
-    y: [24.17, 24.49, 24.71],
-    type: 'bar'
+// Table for Fortune 500 Comparision
+Plotly.d3.csv("csv/wearables.csv", function(err, rows){
+
+  function unpack(rows, key) {
+  return rows.map(function(row) { return row[key]; });
   }
-];
 
-Plotly.newPlot('myDiv', data);
+  var headerNames = Plotly.d3.keys(rows[0]);
 
+  var headerValues = [];
+  var cellValues = [];
+  for (i = 0; i < headerNames.length; i++) {
+    headerValue = [headerNames[i]];
+    headerValues[i] = headerValue;
+    cellValue = unpack(rows, headerNames[i]);
+    cellValues[i] = cellValue;
+  }
+
+  // clean date
+  for (i = 0; i < cellValues[1].length; i++) {
+  var dateValue = cellValues[1][i].split(' ')[0]
+  cellValues[1][i] = dateValue
+  }
+
+
+var data = [{
+  type: 'table',
+  columnwidth: [250,600,1000,900,600,500,1000,1000,1000],
+  columnorder: [0,1,2,3,4,5,6,7,8,9],
+  header: {
+    values: headerValues,
+    align: "center",
+    line: {width: 1, color: 'rgb(50, 50, 50)'},
+    fill: {color: ['rgb(231, 82, 79)']},
+    font: {family: "Arial", size: 16, color: "black"}
+  },
+  cells: {
+    values: cellValues,
+    align: ["center", "center"],
+      height: 26,
+    line: {color: "black", width: 1},
+
+    fill: {color: ['rgba(231, 82, 79, 0.65)','rgb(255, 255, 255)', 'rgba(231, 82, 79, 0.65)']},
+    font: {family: "Arial", size: 13, color: ["black"]}
+  }
+}]
+// color: 'rgb(231, 82, 79)',
+
+var layout = {
+  title: "Fortune 500 Rankings"
+}
+
+Plotly.newPlot('myTable', data, layout);
+});

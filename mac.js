@@ -47,7 +47,7 @@ yaxis: { title: "Revenue in Billons"}
 Plotly.newPlot("mac-year", data, layout);
 
 // Table for Fortune 500 Comparision
-Plotly.d3.csv("csv/ipad.csv", function(err, rows){
+Plotly.d3.csv("csv/mac.csv", function(err, rows){
 
   function unpack(rows, key) {
   return rows.map(function(row) { return row[key]; });
@@ -79,7 +79,7 @@ var data = [{
     values: headerValues,
     align: "center",
     line: {width: 1, color: 'rgb(50, 50, 50)'},
-    fill: {color: ['rgb(248, 148, 51)']},
+    fill: {color: ['rgb(115, 194, 92)']},
     font: {family: "Arial", size: 16, color: "black"}
   },
   cells: {
@@ -88,11 +88,11 @@ var data = [{
       height: 26,
     line: {color: "black", width: 1},
 
-    fill: {color: ['rgba(248, 148, 51, 0.65)','rgb(255, 255, 255)', 'rgba(248, 148, 51, 0.65)']},
+    fill: {color: ['rgba(115, 194, 92, 0.65)','rgb(255, 255, 255)', 'rgba(115, 194, 92, 0.65)']},
     font: {family: "Arial", size: 13, color: ["black"]}
   }
 }]
-
+// color: 'rgb(115, 194, 92)',
 
 var layout = {
   title: "Fortune 500 Rankings"
