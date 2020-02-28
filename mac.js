@@ -92,7 +92,7 @@ var data = [{
     font: {family: "Arial", size: 13, color: ["black"]}
   }
 }]
-// color: 'rgb(115, 194, 92)',
+
 
 var layout = {
   title: "Fortune 500 Rankings"
