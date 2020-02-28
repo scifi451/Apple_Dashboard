@@ -48,7 +48,6 @@ yaxis: { title: "Revenue in Billons"}
 Plotly.newPlot("iphone-year", data, layout);
 
 // Table for Fortune 500 Comparision
-
 Plotly.d3.csv("csv/iphone.csv", function(err, rows){
 
   function unpack(rows, key) {
@@ -100,5 +99,5 @@ var layout = {
   title: "Fortune 500 Rankings"
 }
 
-Plotly.newPlot('myDiv', data, layout);
+Plotly.newPlot('myTable', data, layout);
 });
