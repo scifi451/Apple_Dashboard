@@ -39,11 +39,21 @@ var data = [yearly];
 
 // Apply the group barmode to the layout
 var layout = {
-title: "Wearables, home and accessories  Revenue by Fiscal Year",
+title: "Wearables, home and accessories Revenue by Fiscal Year",
 xaxis: { title: "Year" },
 yaxis: { title: "Revenue in Billons"}
 };
 
 // Setting up the plot for yearly numbers
 Plotly.newPlot("wearables-year", data, layout);
+
+var data = [
+  {
+    x: ['US Foods Holding', 'Apple Wearables', 'Starbucks'],
+    y: [24.17, 24.49, 24.71],
+    type: 'bar'
+  }
+];
+
+Plotly.newPlot('myDiv', data);
 
