@@ -87,7 +87,7 @@ var data = [{
   cells: {
     values: cellValues,
     align: ["center", "center"],
-      height: 20,
+      height: 26,
     line: {color: "black", width: 1},
 
     fill: {color: ['rgba(253, 195, 51, 0.65)','rgb(255, 255, 255)', 'rgba(253, 195, 51, 0.65)']},
