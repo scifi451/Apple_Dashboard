@@ -29,7 +29,7 @@ var yearly = {
   x: ["2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019"],
   type: "scatter",
   line: {
-    color: 'rgb(248, 148, 39)',
+    color: 'rgb(253, 195, 51)',
     width: 2
   }
 };
@@ -75,23 +75,26 @@ Plotly.d3.csv("csv/iphone.csv", function(err, rows){
 
 var data = [{
   type: 'table',
-  columnwidth: [150,600,1000,900,600,500,1000,1000,1000],
+  columnwidth: [250,600,1000,900,600,500,1000,1000,1000],
   columnorder: [0,1,2,3,4,5,6,7,8,9],
   header: {
     values: headerValues,
     align: "center",
     line: {width: 1, color: 'rgb(50, 50, 50)'},
-    fill: {color: ['rgb(235, 100, 230)']},
-    font: {family: "Arial", size: 16, color: "white"}
+    fill: {color: ['rgb(253, 195, 51)']},
+    font: {family: "Arial", size: 16, color: "black"}
   },
   cells: {
     values: cellValues,
     align: ["center", "center"],
+      height: 20,
     line: {color: "black", width: 1},
-    fill: {color: ['rgba(228, 222, 249, 0.65)','rgb(235, 193, 238)', 'rgba(228, 222, 249, 0.65)']},
+
+    fill: {color: ['rgba(253, 195, 51, 0.65)','rgb(255, 255, 255)', 'rgba(253, 195, 51, 0.65)']},
     font: {family: "Arial", size: 13, color: ["black"]}
   }
 }]
+
 
 var layout = {
   title: "Fortune 500 Rankings"
