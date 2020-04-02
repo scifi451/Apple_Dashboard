@@ -1,2 +1,2 @@
 # Apple Dashboard
-Dashboard of Apple revenues.
+Dashboard that analyzes Apple revenues by product category.
