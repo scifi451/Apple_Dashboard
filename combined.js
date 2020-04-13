@@ -171,7 +171,7 @@ Plotly.d3.csv("csv/topfive.csv", function(err, rows){
 
 var data = [{
   type: 'table',
-  columnwidth: [250,600,1000,900,600,500,1000,1000,1000],
+  columnwidth: [310,600,1000,900,600,500,1000,1000,1000],
   columnorder: [0,1,2,3,4,5,6,7,8,9],
   header: {
     values: headerValues,
