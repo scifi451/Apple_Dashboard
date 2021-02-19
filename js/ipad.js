@@ -102,5 +102,5 @@ var layout = {
   title: "Fortune 500 Rankings"
 }
 
-Plotly.newPlot('ipad_table', data, layout);
+Plotly.newPlot('myTable', data, layout);
 });

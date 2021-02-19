@@ -75,50 +75,11 @@ yaxis: { title: "Revenue in Billons"}
 // Setting up the plot for quarterly numbers
 Plotly.newPlot("combined", data, layout);
 
-// Individual plots for each product category for quarterly.
-// The data array consists of iPad quarterly trace.
-var data = [ipad];
-
-// Apply the group barmode to the layout
-var layout = {
-  title: "iPad Revenue by Quarter",
-  xaxis: { title: "Quarter" },
-  yaxis: { title: "Revenue in Billons"}
-};
-
-// Setting up the plot for quarterly numbers
-Plotly.newPlot("ipad", data, layout);
-
-//Yearly Numbers
 // Create our first trace
-var iphone_yearly = {
-  name: 'iPhone',
-  y: [45.998, 78.7, 91.28, 101.99, 155.04, 136.71, 141.33, 165.8, 142.38, 137.78],
-  x: ["2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020"],
-  type: "scatter",
-  line: {
-    color: 'rgb(253, 195, 51)',
-    width: 2
-  }
-};
-
-// Create our second trace
-var mac_yearly = {
-  name: 'Mac',
-  y: [21.783, 23.22, 21.48, 24.09, 25.47, 22.84, 25.84, 25.35, 25.74, 28.62],
-  x: ["2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020"],
-  type: "scatter",
-  line: {
-    color: 'rgb(115, 194, 92)',
-    width: 2
-  }
-};
-
-// Create our third trace
 var ipad_yearly = {
   name: 'iPad',
-  y: [19.168, 30.94, 31.98, 30.29, 23.24, 20.63, 19.22, 18.59, 21.28, 23.72],
-  x: ["2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020"],
+  y: [19.168, 30.94, 31.98, 30.29, 23.24, 20.63, 19.22, 18.59, 21.28],
+  x: ["2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019"],
   type: "scatter",
   line: {
     color: 'rgb(248, 148, 39)',
@@ -126,26 +87,50 @@ var ipad_yearly = {
   }
 };
 
-// Create our fourth trace
-var wearables_yearly = {
-  name: 'Wearables Etc',
-  y: [4.474, 10.77, 10.11, 8.39, 10.07, 11.13, 12.86, 17.39, 24.49, 30.62],
-  x: ["2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020"],
+// Create our second trace
+var iphone_yearly = {
+  name: 'iPhone',
+  y: [45.998, 78.7, 91.28, 101.99, 155.04, 136.71, 141.33, 165.8, 142.38],
+  x: ["2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019"],
   type: "scatter",
   line: {
-    color: 'rgb(231, 82, 79)',
+    color: 'rgb(253, 195, 51)',
+    width: 2
+  }
+};
+
+// Create our third trace
+var mac_yearly = {
+  name: 'Mac',
+  y: [21.783, 23.22, 21.48, 24.09, 25.47, 22.84, 25.84, 25.35, 25.74],
+  x: ["2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019"],
+  type: "scatter",
+  line: {
+    color: 'rgb(115, 194, 92)',
+    width: 2
+  }
+};
+
+// Create our fourth trace
+var services_yearly = {
+  name: 'Services',
+  y: [9.373, 12.89, 16.05, 18.07, 19.92, 24.36, 29.98, 38.47, 46.3],
+  x: ["2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019"],
+  type: "scatter",
+  line: {
+    color: 'rgb(168, 86, 169)',
     width: 2
   }
 };
 
 // Create our fifth trace
-var services_yearly = {
-  name: 'Services',
-  y: [9.373, 12.89, 16.05, 18.07, 19.92, 24.36, 29.98, 38.47, 46.3, 53.76],
-  x: ["2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020"],
+var wearables_yearly = {
+  name: 'Wearables Etc',
+  y: [4.474, 10.77, 10.11, 8.39, 10.07, 11.13, 12.86, 17.39, 24.49],
+  x: ["2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019"],
   type: "scatter",
   line: {
-    color: 'rgb(168, 86, 169)',
+    color: 'rgb(231, 82, 79)',
     width: 2
   }
 };
@@ -162,20 +147,6 @@ yaxis: { title: "Revenue in Billons"}
 
 // Setting up the plot for quarterly numbers
 Plotly.newPlot("combined_year", data, layout);
-
-// Yearly numbers for each individual product category.
-var data = [ipad_yearly];
-
-// Apply the group barmode to the layout
-var layout = {
-  title: "iPad Revenue by Fiscal Year",
-  xaxis: { title: "Year" },
-  yaxis: { title: "Revenue in Billons"}
-  };
-  
-  // Setting up the plot for yearly numbers
-  Plotly.newPlot("ipad-year", data, layout);
-  
 
 // Table for Fortune 500 Comparision
 Plotly.d3.csv("csv/topfive.csv", function(err, rows){
@@ -229,60 +200,5 @@ var layout = {
   title: "Fortune 500 Rankings"
 }
 
-Plotly.newPlot('top5', data, layout);
-});
-
-// Table for Fortune 500 Comparision
-Plotly.d3.csv("csv/ipad.csv", function(err, rows){
-
-  function unpack(rows, key) {
-  return rows.map(function(row) { return row[key]; });
-  }
-
-  var headerNames = Plotly.d3.keys(rows[0]);
-
-  var headerValues = [];
-  var cellValues = [];
-  for (i = 0; i < headerNames.length; i++) {
-    headerValue = [headerNames[i]];
-    headerValues[i] = headerValue;
-    cellValue = unpack(rows, headerNames[i]);
-    cellValues[i] = cellValue;
-  }
-
-  // clean date
-  for (i = 0; i < cellValues[1].length; i++) {
-  var dateValue = cellValues[1][i].split(' ')[0]
-  cellValues[1][i] = dateValue
-  }
-
-
-var data = [{
-  type: 'table',
-  columnwidth: [250,600,1000,900,600,500,1000,1000,1000],
-  columnorder: [0,1,2,3,4,5,6,7,8,9],
-  header: {
-    values: headerValues,
-    align: "center",
-    line: {width: 1, color: 'rgb(50, 50, 50)'},
-    fill: {color: ['rgb(248, 148, 51)']},
-    font: {family: "Arial", size: 16, color: "black"}
-  },
-  cells: {
-    values: cellValues,
-    align: ["center", "center"],
-      height: 26,
-    line: {color: "black", width: 1},
-
-    fill: {color: ['rgba(248, 148, 51, 0.65)','rgb(255, 255, 255)', 'rgba(248, 148, 51, 0.65)']},
-    font: {family: "Arial", size: 13, color: ["black"]}
-  }
-}]
-
-
-var layout = {
-  title: "Fortune 500 Rankings"
-}
-
-Plotly.newPlot('ipad_table', data, layout);
+Plotly.newPlot('myTable', data, layout);
 });
